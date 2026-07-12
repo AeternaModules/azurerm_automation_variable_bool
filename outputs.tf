@@ -1,3 +1,7 @@
+output "automation_variable_bools_id" {
+  description = "Map of id values across all automation_variable_bools, keyed the same as var.automation_variable_bools"
+  value       = { for k, v in azurerm_automation_variable_bool.automation_variable_bools : k => v.id }
+}
 output "automation_variable_bools_automation_account_name" {
   description = "Map of automation_account_name values across all automation_variable_bools, keyed the same as var.automation_variable_bools"
   value       = { for k, v in azurerm_automation_variable_bool.automation_variable_bools : k => v.automation_account_name }
